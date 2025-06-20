@@ -1,6 +1,6 @@
-public class PlanoBasico extends PlanoInternet {
-    public PlanoBasico() {
-        super("Basico", 100, 79.90, 2.50);
+public class PlanoCompleto extends PlanoInternet {
+    public PlanoCompleto() {
+        super("Completo", 200, 139.9, 5);
     }
 
     @Override

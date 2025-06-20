@@ -7,7 +7,7 @@ public class Cliente {
     private String cpf;
     private String endereco;
     private PlanoInternet plano;
-    private List<RegistroUso> usoMensal;
+    protected List<RegistroUso> usoMensal;
 
     public Cliente(String nome, String cpf, String endereco, PlanoInternet plano) {
         this.nome = nome;
@@ -38,6 +38,10 @@ public class Cliente {
     public String getNome() {
         return this.nome;
     }
+
+    public String getEndereco() { return this.endereco; }
+
+    public PlanoInternet getPlano() { return this.plano; }
 
     // Getters, setters, toString
 }

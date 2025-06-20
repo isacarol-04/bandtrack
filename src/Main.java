@@ -24,7 +24,7 @@ public class Main {
                     System.out.print("Endereço: ");
                     String end = scanner.nextLine();
 
-                    PlanoInternet plano = new PlanoBasico(); // pode criar um menu para escolher plano
+                    PlanoInternet plano = PlanoMenu.Escolher(scanner);
                     Cliente cliente = new Cliente(nome, cpf, end, plano);
                     sistema.cadastrarCliente(cliente);
                     System.out.println("Cliente cadastrado!");
@@ -43,8 +43,10 @@ public class Main {
                     break;
 
                 case 4:
+                    sistema.salvar();
                     System.exit(0);
             }
         }
+
     }
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bandtrack.iml" filepath="$PROJECT_DIR$/bandtrack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bandtrack2.iml" filepath="$PROJECT_DIR$/bandtrack2.iml" />
     </modules>
   </component>
 </project>

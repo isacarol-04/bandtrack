@@ -5,6 +5,7 @@ public abstract class PlanoInternet {
     protected double precoExcedentePorGB;
 
     public PlanoInternet(String nome, double limite, double preco, double excedente) {
+
         this.nome = nome;
         this.limiteMensalGB = limite;
         this.precoMensal = preco;
@@ -12,6 +13,4 @@ public abstract class PlanoInternet {
     }
 
     public abstract double calcularValorTotal(double consumoGB);
-
-    // Getters e Setters
 }
