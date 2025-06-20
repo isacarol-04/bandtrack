@@ -1,10 +1,10 @@
-# 📶 BandaTrack - Sistema de Gerenciamento de Planos de Internet
+# 📶 BandTrack - Sistema de Gerenciamento de Planos de Internet
 
 Projeto desenvolvido para a disciplina de Programação Orientada a Objetos (POO), com foco em boas práticas, uso de herança, polimorfismo, abstrações, tratamento de exceções e persistência de dados.
 
 ## 📚 Sobre o Projeto
 
-O **BandaTrack** é um sistema de linha de comando que simula uma loja de planos de internet, permitindo:
+O **BandTrack** é um sistema de linha de comando que simula uma loja de planos de internet, permitindo:
 
 - Cadastrar clientes com diferentes tipos de planos;
 - Registrar o consumo mensal de cada cliente;
