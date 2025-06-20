@@ -1,6 +1,6 @@
 package model;
 
-public abstract class PlanoInternet implements Faturavel {
+public abstract class PlanoInternet implements Cobranca {
     protected String nome;
     protected double limiteMensalGB;
     protected double precoMensal;

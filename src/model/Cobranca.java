@@ -1,5 +1,5 @@
 package model;
 
-public interface Faturavel {
+public interface Cobranca {
     double calcularValorTotal(double consumoGB);
 }
