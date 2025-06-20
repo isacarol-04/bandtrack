@@ -41,7 +41,7 @@ public class Main {
                         nome = scanner.nextLine();
                         System.out.print("CPF: ");
                         cpf = scanner.nextLine();
-                        if (sistema.clienteExiste(cpf)) {
+                        if (sistema.buscarClientePorCpf(cpf) != null) {
                             System.out.println("Já existe um cliente cadastrado com esse CPF.");
                             break;
                         }

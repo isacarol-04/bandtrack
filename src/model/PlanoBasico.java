@@ -2,7 +2,7 @@ package model;
 
 public class PlanoBasico extends PlanoInternet {
     public PlanoBasico() {
-        super("Basico", 100, 79.90, 2.50);
+        super("Basico", 100, 79.90, 4);
     }
 
     @Override

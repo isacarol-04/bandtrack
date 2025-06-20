@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class GerenciadorTelecom {
     private static final String CLIENTES_CSV = "clientes.csv";
@@ -27,7 +28,12 @@ public class GerenciadorTelecom {
     }
 
     public Cliente buscarClientePorCpf(String cpf) {
-        return clientes.stream().filter(c -> c.getCpf().equals(cpf)).findFirst().orElse(null);
+        for (Cliente cliente : clientes) {
+            if (Objects.equals(cliente.getCpf(), cpf)) {
+                return cliente;
+            }
+        }
+        return null;
     }
 
     public void registrarUso(String cpf, LocalDate data, double consumoGB) {
@@ -121,10 +127,6 @@ public class GerenciadorTelecom {
         } catch (IOException e) {
             System.out.println("Erro ao carregar consumos! Mensagem: " + e.getMessage());
         }
-    }
-
-    public boolean clienteExiste(String cpf) {
-        return clientes.stream().anyMatch(c -> c.getCpf().equals(cpf));
     }
 
     public void salvar() {
