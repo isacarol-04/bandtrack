@@ -1,8 +1,10 @@
+package model;
+
 import java.time.LocalDate;
 
 public class RegistroUso {
-    private LocalDate data;
-    private double consumoGB;
+    private final LocalDate data;
+    private final double consumoGB;
 
     public RegistroUso(LocalDate data, double consumoGB) {
         this.data = data;

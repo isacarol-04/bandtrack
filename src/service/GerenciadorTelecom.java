@@ -1,12 +1,20 @@
-import java.io.*;
-import java.nio.file.*;
+package service;
+
+import model.*;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GerenciadorTelecom {
     private static final String CLIENTES_CSV = "clientes.csv";
     private static final String CONSUMOS_CSV = "consumos.csv";
-    private List<Cliente> clientes;
+    private final List<Cliente> clientes;
 
     public GerenciadorTelecom() {
         clientes = new ArrayList<>();
@@ -19,10 +27,7 @@ public class GerenciadorTelecom {
     }
 
     public Cliente buscarClientePorCpf(String cpf) {
-        return clientes.stream()
-                .filter(c -> c.getCpf().equals(cpf))
-                .findFirst()
-                .orElse(null);
+        return clientes.stream().filter(c -> c.getCpf().equals(cpf)).findFirst().orElse(null);
     }
 
     public void registrarUso(String cpf, LocalDate data, double consumoGB) {
@@ -120,28 +125,16 @@ public class GerenciadorTelecom {
 
 
     public void salvar() {
-        try (
-                BufferedWriter clientesWriter = Files.newBufferedWriter(Paths.get(CLIENTES_CSV));
-                BufferedWriter consumoWriter = Files.newBufferedWriter(Paths.get(CONSUMOS_CSV))
-        ) {
+        try (BufferedWriter clientesWriter = Files.newBufferedWriter(Paths.get(CLIENTES_CSV)); BufferedWriter consumoWriter = Files.newBufferedWriter(Paths.get(CONSUMOS_CSV))) {
             for (Cliente cliente : clientes) {
-                String tipoPlano = cliente.getPlano().nome;
+                String tipoPlano = cliente.getPlano().getNome();
 
-                clientesWriter.write(String.format("%s,%s,%s,%s%n",
-                        cliente.getNome(),
-                        cliente.getCpf(),
-                        cliente.getEndereco(),
-                        tipoPlano
-                ));
+                clientesWriter.write(String.format("%s,%s,%s,%s%n", cliente.getNome(), cliente.getCpf(), cliente.getEndereco(), tipoPlano));
 
 
-                for (RegistroUso uso : cliente.usoMensal) {
+                for (RegistroUso uso : cliente.getUsoMensal()) {
                     String consumo = String.format("%f", uso.getConsumoGB()).replace(",", ".");
-                    consumoWriter.write(String.format("%s,%s,%s%n",
-                            cliente.getCpf(),
-                            uso.getData().toString(),
-                            consumo
-                    ));
+                    consumoWriter.write(String.format("%s,%s,%s%n", cliente.getCpf(), uso.getData().toString(), consumo));
                 }
             }
 

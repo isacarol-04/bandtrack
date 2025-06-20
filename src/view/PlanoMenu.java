@@ -1,4 +1,10 @@
-import java.time.LocalDate;
+package view;
+
+import model.PlanoBasico;
+import model.PlanoCompleto;
+import model.PlanoFamilia;
+import model.PlanoInternet;
+
 import java.util.Scanner;
 
 public class PlanoMenu {

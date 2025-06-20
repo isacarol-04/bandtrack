@@ -1,13 +1,15 @@
+package model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-    private String nome;
-    private String cpf;
-    private String endereco;
-    private PlanoInternet plano;
     protected List<RegistroUso> usoMensal;
+    private final String nome;
+    private final String cpf;
+    private final String endereco;
+    private final PlanoInternet plano;
 
     public Cliente(String nome, String cpf, String endereco, PlanoInternet plano) {
         this.nome = nome;
@@ -22,9 +24,7 @@ public class Cliente {
     }
 
     public double calcularUsoTotal() {
-        return usoMensal.stream()
-                .mapToDouble(RegistroUso::getConsumoGB)
-                .sum();
+        return usoMensal.stream().mapToDouble(RegistroUso::getConsumoGB).sum();
     }
 
     public double gerarValorFatura() {
@@ -39,9 +39,16 @@ public class Cliente {
         return this.nome;
     }
 
-    public String getEndereco() { return this.endereco; }
+    public String getEndereco() {
+        return this.endereco;
+    }
 
-    public PlanoInternet getPlano() { return this.plano; }
+    public PlanoInternet getPlano() {
+        return this.plano;
+    }
 
-    // Getters, setters, toString
+    public List<RegistroUso> getUsoMensal() {
+        return usoMensal;
+    }
+
 }

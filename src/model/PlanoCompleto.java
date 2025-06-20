@@ -1,3 +1,5 @@
+package model;
+
 public class PlanoCompleto extends PlanoInternet {
     public PlanoCompleto() {
         super("Completo", 200, 139.9, 5);
@@ -5,8 +7,10 @@ public class PlanoCompleto extends PlanoInternet {
 
     @Override
     public double calcularValorTotal(double consumoGB) {
-        if (consumoGB <= limiteMensalGB) return precoMensal;
-        double excedente = consumoGB - limiteMensalGB;
-        return precoMensal + excedente * precoExcedentePorGB;
+        if (temExcedente(consumoGB)) {
+            return precoMensal + calcularExcedente(consumoGB);
+        }
+        return precoMensal;
     }
 }
+
