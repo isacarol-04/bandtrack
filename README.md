@@ -2,8 +2,7 @@
 
 Projeto desenvolvido para a disciplina de Programação Orientada a Objetos (POO), com foco em boas práticas, uso de herança, polimorfismo, abstrações, tratamento de exceções e persistência de dados.
 
----
-
+___
 ## 📚 Sobre o Projeto
 
 O **BandaTrack** é um sistema de linha de comando que simula uma loja de planos de internet, permitindo:
@@ -14,8 +13,7 @@ O **BandaTrack** é um sistema de linha de comando que simula uma loja de planos
 - Gerar relatórios mensais;
 - Salvar e carregar os dados automaticamente via arquivos `.csv`.
 
----
-
+___
 ## 🧱 Estrutura do Projeto
 
 ```bash
@@ -39,11 +37,11 @@ src/
 └── view/                  # Interação com o usuário
     └── PlanoMenu.java
 ```
----
+___
 ## 🧩 Diagrama UML do projeto 
 ![Diagrama UML do projeto](docs/uml_bandtrack.png)
 
----
+___
 
 ## 📦 Descrição das Classes Principais
 
@@ -70,4 +68,4 @@ src/
 - **Main**  
   Ponto de entrada da aplicação, que apresenta o menu principal, lê a entrada do usuário e executa as operações solicitadas.
 
-****
+___
