@@ -41,6 +41,10 @@ public class Main {
                         nome = scanner.nextLine();
                         System.out.print("CPF: ");
                         cpf = scanner.nextLine();
+                        if (sistema.clienteExiste(cpf)) {
+                            System.out.println("Já existe um cliente cadastrado com esse CPF.");
+                            break;
+                        }
                         System.out.print("Endereço: ");
                         end = scanner.nextLine();
 
@@ -63,7 +67,6 @@ public class Main {
                         break;
 
                     case 4:
-                        sistema.salvar();
                         System.exit(0);
                         break;
                 }

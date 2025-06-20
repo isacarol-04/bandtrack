@@ -123,6 +123,9 @@ public class GerenciadorTelecom {
         }
     }
 
+    public boolean clienteExiste(String cpf) {
+        return clientes.stream().anyMatch(c -> c.getCpf().equals(cpf));
+    }
 
     public void salvar() {
         try (BufferedWriter clientesWriter = Files.newBufferedWriter(Paths.get(CLIENTES_CSV)); BufferedWriter consumoWriter = Files.newBufferedWriter(Paths.get(CONSUMOS_CSV))) {
